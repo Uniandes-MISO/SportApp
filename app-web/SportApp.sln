@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8D385AC6-F
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "SportApp.Web", "src\SportApp.Web\SportApp.Web.esproj", "{28D2885D-D345-4642-87FB-E75818CEF9AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportApp.Test", "test\SportApp.Test\SportApp.Test.csproj", "{0A7227F6-CDB7-44B9-BC05-886FF3067E1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{28D2885D-D345-4642-87FB-E75818CEF9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28D2885D-D345-4642-87FB-E75818CEF9AF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{28D2885D-D345-4642-87FB-E75818CEF9AF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0A7227F6-CDB7-44B9-BC05-886FF3067E1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A7227F6-CDB7-44B9-BC05-886FF3067E1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A7227F6-CDB7-44B9-BC05-886FF3067E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A7227F6-CDB7-44B9-BC05-886FF3067E1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{B1216E2D-71A2-4E07-AC37-ED532EE568A2} = {8DA93821-75A2-44C6-9C48-CA02FC72BCAF}
 		{8C752C29-7897-487C-A156-3CE9EB0E598F} = {8DA93821-75A2-44C6-9C48-CA02FC72BCAF}
 		{28D2885D-D345-4642-87FB-E75818CEF9AF} = {8DA93821-75A2-44C6-9C48-CA02FC72BCAF}
+		{0A7227F6-CDB7-44B9-BC05-886FF3067E1B} = {8D385AC6-F2E5-4681-B8C7-296FD07AECBF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9CAFC77F-6B88-4E6C-8F0C-701919D0989B}
