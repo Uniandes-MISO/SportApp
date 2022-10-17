@@ -1,4 +1,4 @@
-namespace SportApp
+namespace SportApp.Api.Models
 {
     public class WeatherForecast
     {

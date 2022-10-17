@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using SportApp.Api.Models;
 
 namespace SportApp.Controllers
 {
