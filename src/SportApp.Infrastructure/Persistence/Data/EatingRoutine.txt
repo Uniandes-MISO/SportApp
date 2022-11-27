@@ -1,0 +1,19 @@
+﻿insert into public."EatingRoutine" ("Name", "Description", "Image") values ('Alcelaphus buselaphus caama', 'jgeffe0@opensource.org', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
+insert into public."EatingRoutine" ("Name", "Description", "Image") values ('Eolophus roseicapillus', 'jweich1@businesswire.com', 'http://dummyimage.com/100x100.png/dddddd/000000');
+insert into public."EatingRoutine" ("Name", "Description", "Image") values ('Ursus arctos', 'sbetonia2@netscape.com', 'http://dummyimage.com/100x100.png/5fa2dd/ffffff');
+insert into public."EatingRoutine" ("Name", "Description", "Image") values ('Mirounga angustirostris', 'vantcliff3@people.com.cn', 'http://dummyimage.com/100x100.png/5fa2dd/ffffff');
+insert into public."EatingRoutine" ("Name", "Description", "Image") values ('Chordeiles minor', 'jthreadgold4@ow.ly', 'http://dummyimage.com/100x100.png/dddddd/000000');
+
+
+
+
+insert into public."EatingRoutineBusiness" ("EatingRoutineId", "ServiceId") values (3, 5);
+insert into public."EatingRoutineBusiness" ("EatingRoutineId", "ServiceId") values (1, 5);
+insert into public."EatingRoutineBusiness" ("EatingRoutineId", "ServiceId") values (2, 7);
+insert into public."EatingRoutineBusiness" ("EatingRoutineId", "ServiceId") values (1, 5);
+insert into public."EatingRoutineBusiness" ("EatingRoutineId", "ServiceId") values (4, 4);
+insert into public."EatingRoutineBusiness" ("EatingRoutineId", "ServiceId") values (5, 2);
+insert into public."EatingRoutineBusiness" ("EatingRoutineId", "ServiceId") values (2, 4);
+insert into public."EatingRoutineBusiness" ("EatingRoutineId", "ServiceId") values (3, 4);
+
+

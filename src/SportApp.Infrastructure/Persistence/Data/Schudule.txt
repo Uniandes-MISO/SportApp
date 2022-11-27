@@ -1,0 +1,1 @@
+﻿INSERT INTO public."UserSchedule"("Type", "Date", "UserId")	VALUES (1,now(), 'a079d055-d181-4692-9146-fed8c18a989d');

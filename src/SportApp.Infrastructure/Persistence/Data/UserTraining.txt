@@ -1,0 +1,1 @@
+﻿INSERT INTO public."UserTraining"("UserId", "DateTime", "TrainingId")	VALUES ('a079d055-d181-4692-9146-fed8c18a989d', current_timestamp , 1);

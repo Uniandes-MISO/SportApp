@@ -1,0 +1,1214 @@
+{
+	"info": {
+		"_postman_id": "cd63cd7e-5c09-4c86-87bb-c510b94cb5ca",
+		"name": "Proyecto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18014154"
+	},
+	"item": [
+		{
+			"name": "Health check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"token\", data.token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"user1@sportapp.com\",\r\n  \"password\": \"user1*\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"token\", data.token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"cesaroandrade@gmail.com\",\r\n  \"password\": \"1234qwer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/account/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"account",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"user3\",\r\n    \"lastName\": \"sport\",\r\n    \"Email\": \"user3@app.com\",\r\n    \"Password\": \"user3*\",\r\n    \"Rol\": \"Athlete\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/account/register",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"account",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LogOut",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Account/logout/admin@sportapp.com",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Account",
+						"logout",
+						"admin@sportapp.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activities",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Cycling 19-11\",\r\n    \"start\": \"2022-11-19T21:36:45.947Z\",\r\n    \"end\": \"2022-11-19T21:36:45.947Z\",\r\n    \"distance\": 10,\r\n    \"measure\": \"Km\",\r\n    \"type\": \"Cycling\",\r\n    \"userId\": \"b74ddd14-6340-4840-95c2-db12554843e5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/SportActivity",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"SportActivity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activities",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\": 1,\r\n    \"name\": \"Cycling 10-23\",\r\n    \"start\": \"2022-10-23T21:36:45.947Z\",\r\n    \"end\": \"2022-10-23T21:36:45.947Z\",\r\n    \"distance\": 10,\r\n    \"measure\": \"Km\",\r\n    \"type\": \"Cycling\",\r\n    \"userId\": \"b74ddd14-6340-4840-95c2-db12554843e5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/SportActivity",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"SportActivity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activities All",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/SportActivity/b74ddd14-6340-4840-95c2-db12554843e5",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"SportActivity",
+						"b74ddd14-6340-4840-95c2-db12554843e5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EatingRoutineUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/EatingRoutineUser/b74ddd14-6340-4840-95c2-db12554843e5",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"EatingRoutineUser",
+						"b74ddd14-6340-4840-95c2-db12554843e5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Events",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Event/a079d055-d181-4692-9146-fed8c18a989d/all",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Event",
+						"a079d055-d181-4692-9146-fed8c18a989d",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Events by site",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Event/a079d055-d181-4692-9146-fed8c18a989d/30-10-2022/ar",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Event",
+						"a079d055-d181-4692-9146-fed8c18a989d",
+						"30-10-2022",
+						"ar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Events by site",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\":\"30-10-2022\",\r\n    \"site\":\"ar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Event/a079d055-d181-4692-9146-fed8c18a989d",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Event",
+						"a079d055-d181-4692-9146-fed8c18a989d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Routes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Route/a079d055-d181-4692-9146-fed8c18a989d/all",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Route",
+						"a079d055-d181-4692-9146-fed8c18a989d",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Routes by site",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Route/ar",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Route",
+						"ar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Service",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/service/a079d055-d181-4692-9146-fed8c18a989d",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"service",
+						"a079d055-d181-4692-9146-fed8c18a989d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Service",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\" : \"a079d055-d181-4692-9146-fed8c18a989d\",\r\n    \"Name\": \"Name 4\",\r\n    \"Type\": \"Sportsman\",\r\n    \"Phone\": \"Phone\",\r\n    \"Email\": \"Email\",\r\n    \"Website\": \"Website\",\r\n    \"Description\": \"Description\",\r\n    \"SportType\": \"Cycling\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Service",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Service"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Trainer Cycling",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/VirtualSession/Cycling/2022-11-07",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"VirtualSession",
+						"Cycling",
+						"2022-11-07"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Trainer Athletics",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/VirtualSession/Athletics/2022-11-07",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"VirtualSession",
+						"Athletics",
+						"2022-11-07"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Trainer Virtual",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Date\": \"2022-10-23T21:36:45.947Z\",\r\n    \"SportType\": \"Cycling\",\r\n    \"AthleteId\": \"a079d055-d181-4692-9146-fed8c18a989d\",\r\n    \"TrainerId\": \"a079d055-d181-4692-9146-fed8c18a989d\",\r\n    \"HourKey\": \"Seis\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/VirtualSession",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"VirtualSession"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Trainer Virtual User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Date\": \"2022-10-23T21:36:45.947Z\",\r\n    \"SportType\": \"Cycling\",\r\n    \"AthleteId\": \"a079d055-d181-4692-9146-fed8c18a989d\",\r\n    \"TrainerId\": \"a079d055-d181-4692-9146-fed8c18a989d\",\r\n    \"HourKey\": \"Seis\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/VirtualSession/a079d055-d181-4692-9146-fed8c18a989d",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"VirtualSession",
+						"a079d055-d181-4692-9146-fed8c18a989d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Routes by site",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Route/a079d055-d181-4692-9146-fed8c18a989d/ar",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Route",
+						"a079d055-d181-4692-9146-fed8c18a989d",
+						"ar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activities",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/SportActivity/b74ddd14-6340-4840-95c2-db12554843e5/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"SportActivity",
+						"b74ddd14-6340-4840-95c2-db12554843e5",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Training",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Training/a079d055-d181-4692-9146-fed8c18a989d",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Training",
+						"a079d055-d181-4692-9146-fed8c18a989d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserTraining",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/UserTraining/a079d055-d181-4692-9146-fed8c18a989d",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"UserTraining",
+						"a079d055-d181-4692-9146-fed8c18a989d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserTraining",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserId\":\"a079d055-d181-4692-9146-fed8c18a989d\",\r\n    \"TrainingId\" : 4,\r\n    \"dateTime\": \"2022-11-05T11:48:37.688216-05:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/UserTraining",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"UserTraining"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MembershipPlan __ Free-Medium-Premium",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"Medium\", \r\n    \"userId\": \"b9e6ceec-81d5-4563-9fa0-cc91e66ce053\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/MembershipPlan",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"MembershipPlan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MembershipPlan",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"free\",\r\n  \"userId\": \"e68c46f5-dcef-4d82-9327-7468134504a7\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/MembershipPlan/b9e6ceec-81d5-4563-9fa0-cc91e66ce053",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"MembershipPlan",
+						"b9e6ceec-81d5-4563-9fa0-cc91e66ce053"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://sportappapicontainer-env.eba-k5ffhefe.us-east-1.elasticbeanstalk.com",
+			"type": "string"
+		}
+	]
+}
